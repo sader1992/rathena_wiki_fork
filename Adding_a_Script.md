@@ -1,8 +1,3 @@
----
-title: Adding a Script
-permalink: /Adding_a_Script/
----
-
 Adding and Activating Scripts
 -----------------------------
 
@@ -18,14 +13,14 @@ Any text editor may be used to edit \*.conf files. The *npc/\*.conf* files are u
 
 Typical \*.conf entry layout:
 
-`npc: npc/path/to/yourscript1.txt`
-`// npc: npc/path/to/yourscript2.txt`
+    npc: npc/path/to/yourscript1.txt
+    // npc: npc/path/to/yourscript2.txt
 
 Note how the second line is preceded with a double slash. Content on the same line after double slashes will not be parsed. In other words, *script2.txt* will not be loaded. The slashes can be used to write comments.
 
 determines which of the \*.conf will be read by the server.
 
-`import: npc/path/to/configuration.conf`
+`    import: npc/path/to/configuration.conf`
 
 ### The NPC in Game
 
@@ -44,23 +39,23 @@ The NPC name used in examples is "Teddy".
 
 The two files you will need to open and edit are "jobname.lua" and "npcidentity.lua". Jobname.lua will look like:
 
-`   [jobtbl.NPCNAME] = "NPCNAME",`
+`    [jobtbl.NPCNAME] = "NPCNAME",`
 
 Example:
 
-`   [jobtbl.TEDDY] = "TEDDY",`
+`    [jobtbl.TEDDY] = "TEDDY",`
 
 npcidentity.lua will look like:
 
-`   ["NPCNAME"] = NPCID,`
+`    ["NPCNAME"] = NPCID,`
 
 Example:
 
-`   ["TEDDY"] = 587,`
+`    ["TEDDY"] = 587,`
 
 If your NPC has spaces in its name, its best to either remove them or replace them with underscores. So if the NPC's name was Brown Teddy the sprite's name would be Brown_Teddy.spr or BrownTeddy.spr and the lua files would be BROWN_TEDDY or BROWNTEDDY. Whatever ID you choose for your sprite will be the one you use in the script, so since Teddy has the sprite ID of 587, the beginning of my script will look like:
 
-`   xmas_in,111,107,3   script  Teddy   587,{`
+`    xmas_in,111,107,3   script  Teddy   587,{`
 
 ### Sprite
 
@@ -74,4 +69,3 @@ Tips & Hints
 -   Remember to save after editing.
 -   Create your own NPC folder and \*.conf file. This will make it much easier to keep track of your own scripts and can reduce the hassle when merging new revisions of rA. Follow the basic layout of the other \*.conf files and remember to import the \*.conf in
 
-[Category:Scripting](/Category:Scripting "wikilink")
