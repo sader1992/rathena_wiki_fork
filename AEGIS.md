@@ -1,12 +1,7 @@
----
-title: AEGIS
-permalink: /AEGIS/
----
-
 What is it?
 -----------
 
-AEGIS is Windows Server software used along with [Microsoft SQL Server](/wikipedia:Microsoft_SQL_Server "wikilink") by Gravity Corporation to run the official Ragnarok Online game servers.
+AEGIS is Windows Server software used along with [Microsoft SQL Server](http://en.wikipedia.org/wiki/Microsoft_SQL_Server) by Gravity Corporation to run the official Ragnarok Online game servers.
 It was originally developed for exclusive use within Gravity and Gravity subsidiaries, but has been leaked within its lifetime, purportedly by several teams who compromised official computers which contained AEGIS binaries.
 AEGIS consists of a number of components:
 
@@ -19,12 +14,10 @@ Short History
 -------------
 
 AEGIS was originally created by Hakkyu Kim (Neolith) and was his first server project. Despite the fact that Aegis is referred to as production quality (due to the involvement of commercial organizations) leaked versions revealed that the majority of its configuration files were very simple, it used very inefficient means of storing information for reference, and showed very high memory usage when there were no routines running to suggest such usage.
-The original development team was forced to leave the company after a takeover by \[\[wikipedia:Samsung_Electronics|Samsung Electronics\] and most of the core members are now working on a project known as \[\[wikipedia:Granado_Espada|Granado Espada\].
+The original development team was forced to leave the company after a takeover by [Samsung Electronics](http://en.wikipedia.org/wiki/Samsung_Electronics) and most of the core members are now working on a project known as [Granado Espada](http://en.wikipedia.org/wiki/Granado_Espada).
 
 External Links
 --------------
 
--   [AEGIS article on Wikipedia](/wikipedia:AEGIS_(Ragnarok_Online) "wikilink")
+-   [AEGIS article on Wikipedia](http://en.wikipedia.org/wiki/AEGIS_(Ragnarok_Online))
 -   [Aegis Support Board](http://forum.asb-sakray.net/)
-
-[Category:Basics](/Category:Basics "wikilink")
