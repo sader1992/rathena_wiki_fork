@@ -1,13 +1,8 @@
----
-title: A brief look at RagExe
-permalink: /A_brief_look_at_RagExe/
----
-
 *Game Framework Class* (GFC) is Gravity's own name for the game engine or application architecture used in Ragnarok Online. With the Ragnarok beta release in 2001, Gravity announced the finalization of GFC 2.0. But what exactly is GFC, and where did it come from? Most game developers use commercial proprietary engines for their games, while GFC is an in-house product by Gravity's RND-1 development division. In truth, it's misleading to call it a game engine, as GFC in its current form has been used in exactly one game and is tightly coupled to it. In all likelyhood the name GFC and the notion of a game engine are just buzzwords Gravity used in an attempt at impressing investors in their early days. However, my client is strictly based on Gravity's RagExe implementation, and I guess it can therefore be said to be a clone of GFC. Here's a brief look at its history.
 
 Gravity Corp. was a relatively small developer before Ragnarok Online became an international success. Certainly no one outside of South Korea knew of them. In fact, right up until Ragnarok become ready for alpha testing they were still just Team Gravity. In 1999 they partnered up with Sonnori Entertainment in a joint venture to develop an action RPG. *Arcturus: The Curse and Loss of Divinity* was released with success in 2000. At this point Gravity obtained the rights to publish a game based on the popular Korean comic *Ragnarök*. They decided to reuse source code from Arcturus. While Arcturus and Ragnarok don't have much in common in terms of game play, resemblances can be noticed in aspects such as artistic style and music.
 
-[<File:Acturus.png>](/File:Acturus.png "wikilink")
+
 
 Making Arcturus into the Ragnarok we know today required a severe overhaul of the code base. However, in many architectural decisions were left intact. What was retained became the base of GFC.
 
@@ -26,11 +21,11 @@ While based on DirectX 7.0, from a modern perspective GFC can be said to be soft
 
 Game objects communicate by passing messages around to each other. In Ragnarok, there is also a global state (the session) and the current game mode, which is responsible for tasks like processing input, creating actors, handling network messages and signalling actors.
 
-[<File:Acturus-GameObjectHierarchy.png>](/File:Acturus-GameObjectHierarchy.png "wikilink")
+
 
 The diagram above shows part of the base object hierarchy in Arcturus, which is pretty tall and convoluted. In Arcturus, each enemy needed its own class specialization. In comparison the diagram below shows the object hierarchy at the time of the Ragnarok alpha release. While simplified, the principal structure is the same. I have colored a few classes that provide similar functionality in the two games.
 
-[<File:Ragnarok-GameObjectHierarchy-Alpha.png>](/File:Ragnarok-GameObjectHierarchy-Alpha.png "wikilink")
+
 
 CRenderObject is any type of object that is draw on the screen, while CGameActor is any object that can be interacted with. CPc is the object type for characters controlled by a player. CNpc covers static NPCs and monsters. In Arcturus you could interact with certain 3D models (e.g. doors, chests), so C3dActor was a part of the game object hierarchy. In Ragnarok, all 3D models are just decoration and not part of the game play and aren't considered game objects. (The exceptions to the rule are Granny actors and traps, the latter of which are actually RSM models drawn by a Skill object.)
 
