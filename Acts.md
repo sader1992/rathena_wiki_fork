@@ -1,8 +1,3 @@
----
-title: Acts
-permalink: /Acts/
----
-
 Actions Aka .Act files
 ----------------------
 
@@ -14,7 +9,7 @@ What You Will Need To Edit Act Files
 -   Actor
 -   Actor 2 (Recommended)
 -   Already made spr
--   A [hex editor](/Hex_Editor "wikilink") (If you daring and wish to edit the anything the Actors can't do)
+-   A [hex editor](Hex-Editor) (If you daring and wish to edit the anything the Actors can't do)
 
 Editing An Act File With Actor
 ------------------------------
@@ -23,14 +18,14 @@ So you have your custom sprite, and an act file from another sprite. It can be a
 
 So your first frame should be act00, as seen in the image below its the \#11 object. Now click the arrow to go to the next frame of frame act00 (\#15), and make sure that is correct. You may have a frame of your sprite that was made for that specific frame of the act, so you may need to adjust it. Then click it again and make sure the third is good. Then you can go to act01, this will have a different number of frames, and may have different looking frames (like 1/5 is the death sprite, ect.) that were not in the previous frame. These are the actions. A visual for better understanding (notice how one is act00 and the other is act01):
 
-[center](/Image:_ActOR.gif "wikilink")[center](/Image:_ActOR2.gif "wikilink")
+
 
 To move the sprite around on the sprite, click the first row (the one with a 0) and then click and drag inside the red box that appears around the sprite. To change what sprite is used, change the 0 to another number. To edit the number, click the number once, then click again. If it does not respond, you clicked twice too fast, which is why you cannot double click. They are numbered from 0 to whatever your last frame is. For example, my sprite has 14 frames, so it would be 0-14, 0 being the very first frame.
 
 Actor's Interface
 -----------------
 
-[Image:actor.jpg](/Image:actor.jpg "wikilink")
+
 
 -   1: Menu, File. Open and saving files via this area.
 -   2: Menu, Edit. This area is for editing the sprite that goes with the .act file. You can replace frames, add frames and delete frames using the options here. These options can also be found by clicking anywhere within the sprite frames preview area.
@@ -67,7 +62,7 @@ While much of Actor is simple and easy to use, the layers can be a problem. Laye
 Frame Edit Window
 -----------------
 
-[Image:frame edit.jpg](/Image:frame_edit.jpg "wikilink")
+
 
 Accessed via the 'Edit Frame' in the menu (\#5) this window allows you to delete frames from an action's direction, to also copy a frame and to swap frames. Erasing frames will delete the desired number frame that you pick in the box. Copying a frame will copy a frame adding the copy after the original. Swapping a frame allows you to pick 2 frames via their number in the order of frames and swap the first picked frame with the second. Using this is simple, just click the little dot next to which you want to do and change the number to the frame (or frames) you want and click apply. Then use the Action frame Scroll-bar (\#15) to see the results.
 
@@ -76,7 +71,7 @@ Accessed via the 'Edit Frame' in the menu (\#5) this window allows you to delete
 Act Copy Window
 ---------------
 
-[Image:act copy.jpg](/Image:act_copy.jpg "wikilink")
+
 
 Accessed via the 'ACT(Dir) Copy' in the menu (\#6) this window allows you to copy a single action's direction or directions to others. The first copying the up and down directions and side to side to the diagonal directions as depicted in their description image. The next is the reverse diagonals to vertical and horizontal directions. Then there is the single direction copy which can be used to not only copy a single direction to another in the same action but also other actions as well. Simply select the one you wish to do pick the action number and in the case of the 3rd with the single direction copy you can pick in the left the source direction and in the right pick the direction your copying to. Then click Apply and using the direction buttons back in the main window (\#13) on the action you did the copying with you can see the results. Remember to save often as Actor has no undo.
 
@@ -86,14 +81,14 @@ Editing An Act File With Actor 2
 Actor's Interface
 -----------------
 
-[Image:actor2.jpg](/Image:actor2.jpg "wikilink")
+
 
 -   1: Menu, File. Open and saving files via this area.
 -   2: Menu, Edit. This area is for editing the sprite that goes with the .act file. You can replace frames, add frames and delete frames using the options here. These options can also be found by clicking anywhere within the sprite frames preview area. While all that is the same as Actor 1 there are add new features such as undo and redo, changing pallet and a way to edit a actions sounds (While Actor 1 cannot edit sounds Actor 2 can and sounds you add here can be selected to be played when an action hits a set frame). Also you can change the font via the Table (No idea why it's called that) and the mouse settings have been moved here.
 -   3: Menu, View. Controls for the sprite previewing area are found here. They allow you to change the background color (The area behind the sprite), the selection color (The box around the frame of the sprite in the sprite frames preview area), Indicator color (The cross hairs within the sprite previewing area, which can also be turned on and off here too).
 -   4: Menu, Frame. This replaces the Actor 1's Frame Edit Window to give easy to click menu options. First being the 'Del' which will delete the current frame your on (Gives you a warning encase you are not). Next is the 'CopyAdd' which copies the frame your on making the next frame a duplicate of it. Then there is the 'Exchange' which simply swaps the current frame with which ever frame you tell it to swap it with when you pick that frame's number and click 'ok'.
 -   5: Menu, Dir.4-&gt;8. This is much the same as Actor 1's Act Copy Window which allows you to copy a single action's direction to another or like Actor 1's copy 4 directions to the other 4. They copy in a Clockwise (CW) and Counter-Clockwise (CCW) direction.
--   6: Menu, Script. Unlike Actor 1, scripts written in [Lua](/Lua "wikilink") can be loaded into Actor 2 in order to do any of a number of tasks. Example scripts should come with your copy of Actor 2. You can also edit the scripts via the 'Script &gt; Edit'.
+-   6: Menu, Script. Unlike Actor 1, scripts written in [Lua](Lua) can be loaded into Actor 2 in order to do any of a number of tasks. Example scripts should come with your copy of Actor 2. You can also edit the scripts via the 'Script &gt; Edit'.
 -   7: Menu, Help. While the 'Help &gt; Help' in Actor 2 is non-existent (No matter how many times you click it, it will do nothing) the 'Help &gt; About' will tell you things about who made it.
 -   8: View Reset. Resets the position of the sprite and horizontal/vertical lines to the original position within the sprite previewing area.
 -   9: Action. Here you change change the action your working on. If you are making anything you'll have loaded an act that was the same as what you want to make as new actions cannot be made via Actor 2 (or even Actor 1) and each numbered action does anything from standing and sitting to running, attacking and dieing.
@@ -132,10 +127,9 @@ Technical Support, or FAQs
 -   Q: Why is my sprite showing up weird in Actor?
 -   A: There are 2 reasons why sprites can show up funny looking or out of place. One you didn't name the .spr and .act the same. This can cause the sprite image frames to be displaced. If your sprite has image frames where the image has gone all static looking or just plane messed up it could be that your 8 bit (256 colour) spr file doesn't have all it's image frames with the same pallet. If so you should refer to the Sprite guide to fix this issue.
 -   Q: Why isn't my sprite showing in my client?
--   A: You either didn't add it, named it wrong, didn't list it with what ever list text file in the client needs it listed in. Or you might need to edit the [server source code](/Mmo.h "wikilink") to increase the available id's for items, npc, mobs, etc.
+-   A: You either didn't add it, named it wrong, didn't list it with what ever list text file in the client needs it listed in. Or you might need to edit the [server source code](mmo.h) to increase the available id's for items, npc, mobs, etc.
 -   Q: Why would I try using Actor when there is Actor 2?
 -   A: Some of the things you might be doing may be easier in Actor 1 or you like how it does something over how Actor 2 does it. It's all up to you on what you use.
 -   Q: Can I just get someone else to do it for me?
 -   A: Yes, just post on the 'Forums &gt; Other Support & Releases &gt; Graphic Enhancements &gt; [Graphics Requests](http://rathena.org/board/forum/41-graphics-requests/)' and maybe someone will.
 
-[Category:Spriting](/Category:Spriting "wikilink")
