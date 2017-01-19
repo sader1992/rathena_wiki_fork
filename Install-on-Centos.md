@@ -12,24 +12,10 @@ All of these commands will be typed at the [command-line interface](http://en.wi
 * Login to your server via [SSH](http://en.wikipedia.org/wiki/Secure_Shell), or if you are already logged into a [GUI](wikipedia:http://en.wikipedia.org/wiki/Graphical_user_interface) press Ctrl+Alt+T to open a terminal window.
 * Type the following command (this will install GCC, Make, MySQL, MySQL header files, MySQL Server, PCRE header files, and Zlib header files)
  
- `yum install gcc make mysql mysql-devel mysql-server pcre-devel zlib-devel`
+ `yum install gcc make mysql mysql-devel mysql-server pcre-devel zlib-devel git`
 * (Optional) type the following command to install some additional packages: 
 
  `yum -y install dos2unix gdb nano screen unzip wget zip`
-
-## Now Install GIT
-Add additional repository so yum can find GIT:
-
-` rpm -Uvh http://repo.webtatic.com/yum/centos/5/latest.rpm`
-
-Install the latest version of git
-
-` yum install --enablerepo=webtatic git-all`
-
-To work around Missing Dependency: perl(Git) errors:
-
-` yum install --enablerepo=webtatic --disableexcludes=main  git-all`
-
 
 ## Create a non-root Linux user
 By the [principle of least privilege](http://en.wikipedia.org/wiki/Principle_of_least_privilege), it is recommended you do **NOT** run rAthena as root. 
