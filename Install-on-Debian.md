@@ -59,14 +59,14 @@ Please [this section][] if you're having issues with updating.
 
 ### Compile
 
-` make sql`
+` make server`
 ` chmod a+x login-server && chmod a+x char-server && chmod a+x map-server`
 
 #### How to Recompile
 
 Recompiling is the same as compiling except you always run this command after you configure it
 
-` make clean sql`
+` make clean && make server`
 
 How to Start
 ------------
