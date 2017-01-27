@@ -14,7 +14,7 @@ rAthena runs on most common [Operating Systems](http://en.wikipedia.org/wiki/Ope
 
 ## Configure your Server
 * [Scripting](scripting) like a pro!
-* Server [Modifications](Server_Modifications) and what to expect
+* Server [Modifications](Server_Modification) and what to expect
 * [Database configuration](Ddatabase-Configuration)
 * [Customize](customizing) your server!
 
