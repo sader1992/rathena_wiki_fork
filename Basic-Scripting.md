@@ -2,7 +2,7 @@
 
 Scripts control all NPCs, warps, mob spawns, shops, and quests you will find in the game--and nearly everything else! Clearly they play a large part in customizing a server, but learning isn't very hard.
 
-Scripts are built up of predefined script commands, all of which can be found in (for explanations, see [Script Commands](../../blob/master/doc/script_commands.txt). Every line should begin with a command and the argument it takes, and must end in a semicolon (or you'll get mapserver errors!). Arguments are usually separated by commas, and are sometimes contained in parentheses () or curly brackets {}. Tabs and proper indentation are standard scripting measures.
+Scripts are built up of predefined script commands, all of which can be found in (for explanations, see [Script Commands](../blob/master/doc/script_commands.txt). Every line should begin with a command and the argument it takes, and must end in a semicolon (or you'll get mapserver errors!). Arguments are usually separated by commas, and are sometimes contained in parentheses () or curly brackets {}. Tabs and proper indentation are standard scripting measures.
 
 Scripts are saved as text (\*.txt) files, so all code can be written in Notepad. There are also a lot of scripting programs to use: the most recent and comprehensive one is [Vince's eNPC](http://rathena.org/board/topic/56484-enpc-script-editor/). All defined functions are highlighted, with an autocomplete feature included, and pressing "F1" will display the corresponding explanation for any command.
 
