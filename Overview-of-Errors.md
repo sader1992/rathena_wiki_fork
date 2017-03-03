@@ -1,8 +1,3 @@
----
-title: Overview of Errors
-permalink: /Overview_of_Errors/
----
-
 This article will, in the end, contain all possible script related errors, what their causes are and what you should do to fix them.
 
 Introduction
