@@ -7,7 +7,7 @@
 
 ## Configure your Server
 * [Scripting](scripting) like a pro!
-* Server [Modifications](modifications) and what to expect
+* Server [Modifications](Server-Modification) and what to expect
 * [Database Configuration](Database-Configuration)
 * [Customize](customizing) your server!
 
