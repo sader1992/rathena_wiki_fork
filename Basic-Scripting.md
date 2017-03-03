@@ -1,21 +1,14 @@
----
-title: Basic Scripting
-permalink: /Basic_Scripting/
----
-
-The Basics
-----------
+# The Basics
 
 Scripts control all NPCs, warps, mob spawns, shops, and quests you will find in the game--and nearly everything else! Clearly they play a large part in customizing a server, but learning isn't very hard.
 
-Scripts are built up of predefined script commands, all of which can be found in (for explanations, see [Script Commands](/:Category:Script_Command "wikilink")). Every line should begin with a command and the argument it takes, and must end in a semicolon (or you'll get mapserver errors!). Arguments are usually separated by commas, and are sometimes contained in parentheses () or curly brackets {}. Tabs and proper indentation are standard scripting measures.
+Scripts are built up of predefined script commands, all of which can be found in (for explanations, see [Script Commands](../../blob/master/doc/script_commands.txt). Every line should begin with a command and the argument it takes, and must end in a semicolon (or you'll get mapserver errors!). Arguments are usually separated by commas, and are sometimes contained in parentheses () or curly brackets {}. Tabs and proper indentation are standard scripting measures.
 
 Scripts are saved as text (\*.txt) files, so all code can be written in Notepad. There are also a lot of scripting programs to use: the most recent and comprehensive one is [Vince's eNPC](http://rathena.org/board/topic/56484-enpc-script-editor/). All defined functions are highlighted, with an autocomplete feature included, and pressing "F1" will display the corresponding explanation for any command.
 
-Structure
----------
+# Structure
 
-### NPC
+## NPC
 
 A **Script NPC** will look something like the following:
 
@@ -46,8 +39,7 @@ A **Shop** starts like a normal script:
 The first section defines the map, coordinates, and direction. The word "shop" replaces "script" (alternately, "cashshop" will use Cashpoints instead of Zeny). The name and sprite ID follow, then a comma.
 Items in the shop are defined in an ID:Price format. A price of -1 uses the default price in item_db.txt. Be sure the price is not too low, or a you will open a Zeny exploit in your server!
 
-Fundamentals
-------------
+## Fundamentals
 
 You can always look up commands that you need--even the best scripters don't have everything memorized. There are a few fundamentals that you should know by heart, though, since they are so commonly used.
 
@@ -75,21 +67,21 @@ To go to a label, use the simple "goto" command:
 `*goto `<label>`;`
 
 *Note that there are "special" labels that trigger whenever a specific event occurs. The name usually makes it obvious, but you can find explanations in script_commands.txt. Here is a brief sampling:*
-
-`OnClock`<hour><minute>`:`
-`OnInit:`
-`OnAgitStart:`
-`OnAgitEnd:`
-`OnTouch:`
-`OnPCLoginEvent:`
-`OnPCLogoutEvent:`
-`OnPCBaseLvUpEvent:`
-`OnPCJobLvUpEvent:`
-`OnPCDieEvent:`
-`OnPCKillEvent:`
-`OnNPCKillEvent:`
-`OnPCLoadMapEvent:`
-
+```
+OnClock<hour><minute>:
+OnInit:
+OnAgitStart:
+OnAgitEnd:
+OnTouch:
+OnPCLoginEvent:
+OnPCLogoutEvent:
+OnPCBaseLvUpEvent:
+OnPCJobLvUpEvent:
+OnPCDieEvent:
+OnPCKillEvent:
+OnNPCKillEvent:
+OnPCLoadMapEvent:
+```
 ### Menus, Close, and Next
 
 `*menu "`<option_text>`",`<target_label>`{,"`<option_text>`",`<target_label>`,...};`
@@ -116,47 +108,45 @@ Menus create a set of options, which trigger labels when selected. The text in q
 ### Conditions, Variables, and Set
 
 `*if(condition) {`
-
-<script>
-}
-
+`<script>`
+`}`
 `*else {`
-
-<script>
-}
+`<script>`
+`}`
 
 Conditional statements "if" and "else" are the same as anywhere else. Multiple conditions can be specified: || means *or*, while && means *and*. == is *equal*, != is *not equal*. Inequalities can be used as well (&lt;, &gt;, &lt;=, &gt;=).
 The "else" can be omitted, and the brackets aren't necessary unless multiple commands follow a conditional statement.
 The type of variable used is defined in the name. There are permanent and temporary variables, as well as scope (temporary NPC), character, global, and global account. The default type is an integer, and adding $ as a suffix creates a string.
 Here are some example types, taken from script_commands.txt:
-
-`name  - permanent character integer variable`
-`name$ - permanent character string variable`
-`@name  - temporary character integer variable`
-`@name$ - temporary character string variable`
-`$name  - permanent global integer variable`
-`$name$ - permanent global string variable`
-`$@name  - temporary global integer variable`
-`$@name$ - temporary global string variable`
-`.name  - NPC integer variable`
-`.name$ - NPC string variable`
-`.@name  - scope integer variable`
-`.@name$ - scope string variable`
-`#name  - permanent local account integer variable`
-`#name$ - permanent local account string variable`
-`##name  - permanent global account integer variable`
-`##name$ - permanent global account string variable`
-
+```
+name  - permanent character integer variable
+name$ - permanent character string variable
+@name  - temporary character integer variable
+@name$ - temporary character string variable
+$name  - permanent global integer variable
+$name$ - permanent global string variable
+$@name  - temporary global integer variable
+$@name$ - temporary global string variable
+.name  - NPC integer variable
+.name$ - NPC string variable
+.@name  - scope integer variable
+.@name$ - scope string variable
+#name  - permanent local account integer variable
+#name$ - permanent local account string variable
+##name  - permanent global account integer variable
+##name$ - permanent global account string variable
+```
 The "set" command is used to give a value (or string) to a variable:
 
 `*set `<variable>`,`<expression>`;`
 
 *The following script will pick a random number, store it as the temporary scope variable .@random, and display two different messages depending on the result:*
-
-`set .@random, rand(1,2);`
-`if (.@random == 1) { mes "I like you! :D"; }`
-`else { mes "I don't like you.  Get out of here!"; }`
-`close;`
+```
+set .@random, rand(1,2);
+if (.@random == 1) { mes "I like you! :D"; }
+else { mes "I don't like you.  Get out of here!"; }
+close;
+```
 
 ### Duplicating
 
@@ -180,43 +170,46 @@ After creating the base NPC, duplicates can be added anywhere to any file, so lo
 The first part is *map,x,y,direction*, as you're probably used to by now.
 To define a duplicate, the word "duplicate" followed by the NPC, in parentheses, is needed. The last two parameters are the display name and sprite ID (yes, you can change these, too!).
 
-Finished Product
-----------------
+# Finished Product
 
 Here is an example using the features explained above:
 
-`prontera,156,145,4 script  Test NPC::test  589,{`
-`    mes "Hello, how are you?";`
-`    mes "I am fine, how are you?";`
-`    menu "I am doing okay!",-,"Not doing too good",bad;`
-`    mes "That's good, I'm glad to hear that";`
-`    close;`
-`bad:`
-`    mes "Awww, that makes me a bit ^FF0000sad^000000. Sorry to hear that.";`
-`    next;`
-`    mes "Would you like some zeny to help yourself feel better?";`
-`    next;`
-`    menu "Sure, give it to me!",L_zeny,"Naw, No zeny for me",-;`
-`    close;`
-`L_Zeny:`
-`    mes "I can only give you zeny if you have 10,000 or less.";`
-`    if (Zeny > 10000) goto toomuch;`
-`    mes "You have 10,000 zeny or less, I see.";`
-`    set Zeny,Zeny+10000;`
-`    next;`
-`    mes "Hope you feel better!";`
-`    close;`
-`toomuch:`
-`    mes "You have over 10,000 zeny, you must feel really good about yourself!";`
-`    close;`
-`}`
-`lhz_dun01,157,285,4    duplicate(test) Test NPC    859`
-`hu_fild05,186,210,4    duplicate(test) Test NPC    859`
-`yuno_fild07,221,179,4  duplicate(test) Test NPC    859`
-`tha_scene01,139,194,1  duplicate(test) Test NPC    859`
+    prontera,156,145,4 script  Test NPC::test  589,{
+        mes "Hello, how are you?";
+        mes "I am fine, how are you?";
+        menu "I am doing okay!",-,"Not doing too good",L_Bad;
+        mes "That's good, I'm glad to hear that";
+        close;
+    
+    L_Bad:
+        mes "Awww, that makes me a bit ^FF0000sad^000000. Sorry to hear that.";
+        next;
+        mes "Would you like some Zeny to help yourself feel better?";
+        next;
+        menu "Sure, give it to me!",L_Zeny,"Naw, No Zeny for me",-;
+        close;
+    
+    L_Zeny:
+        mes "I can only give you Zeny if you have 10,000 or less.";
+        if (Zeny > 10000) goto L_Toomuch;
+        mes "You have 10,000 Zeny or less, I see.";
+        Zeny+=10000;
+        next;
+        mes "Hope you feel better!";
+        close;
+    
+    L_Toomuch:
+        mes "You have over 10,000 Zeny, you must feel really good about yourself!";
+        close;
+    }
+    
+    lhz_dun01,157,285,4    duplicate(test) Test NPC    859
+    hu_fild05,186,210,4    duplicate(test) Test NPC    859
+    yuno_fild07,221,179,4  duplicate(test) Test NPC    859
+    tha_scene01,139,194,1  duplicate(test) Test NPC    859
 
-Adding Scripts
---------------
+
+## Adding Scripts
 
 For an NPC to be loaded, it needs to be added to a .conf file. This is typically *npc/scripts_custom.conf*.
 Add a line, and enter your NPC file in the following format:
@@ -225,28 +218,15 @@ Add a line, and enter your NPC file in the following format:
 
 That's it! You're finished!
 
-External Links
---------------
+## External Links
 
-**Reference Manuals for scriping commands**
+### Sprite lists
+* <http://nn.nachtwolke.com/dev/npclist/>
 
--   Original documentation
+### Color Charts
+* <http://www.immigration-usa.com/html_colors.html>
+* <http://www.december.com/html/spec/colorcodes.html>
+* <http://www.colorschemer.com/online.html>
 
-**Sprite lists**
-
--   <http://nn.nachtwolke.com/dev/npclist/>
-
-**Color Charts**
-
--   <http://www.immigration-usa.com/html_colors.html>
--   <http://www.december.com/html/spec/colorcodes.html>
--   [Hex triplet](/wikipedia:Hex_triplet "wikilink")
--   <http://www.colorschemer.com/online.html>
-
-**Support, Request and Release**
-
--   [Scripting support on rA forums](http://rathena.org/board/index.php?showforum=30)
--   1.  scripting on irc.deltaanime.net : Dedicated channel for scripters. Come here to get or give semi-fast support or just for fun.
--   1.  rathena on irc.rizon.net : Main rAthena channel.
-
-[Category:Scripting](/Category:Scripting "wikilink")
+### Support, Request and Release
+* [Scripting support on rA forums](https://rathena.org/board/forum/30-scripting-support/)
