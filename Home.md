@@ -20,3 +20,4 @@ rAthena runs on most common [Operating Systems](http://en.wikipedia.org/wiki/Ope
 
 ## Further reading
 * [Data folder](Data-Folder)
+* [Diff](diff) files
