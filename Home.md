@@ -18,9 +18,5 @@ rAthena runs on most common [Operating Systems](http://en.wikipedia.org/wiki/Ope
 * [Database configuration](Ddatabase-Configuration)
 * [Customize](customizing) your server!
 
-## Setup the Client
+## Further reading
 * [Data folder](Data-Folder)
-* [Spriting](spriting), pixel by pixel
-* [Mapping](mapping) tutorials
-* [Client Configs](diff) make you original
-* [Patchers](patchers) keep you up-to date!
