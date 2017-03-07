@@ -13,7 +13,3 @@
 
 ## Setup the Client
 * [Data folder](Data-Folder)
-* [Spriting](spriting), pixel by pixel
-* [Mapping](mapping) tutorials
-* [Client Configs](diff) make you original
-* [Patchers](patchers) keep you up-to date!
