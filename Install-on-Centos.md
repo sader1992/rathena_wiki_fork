@@ -10,9 +10,9 @@ This guide covers how to install rAthena on [CentOS](http://en.wikipedia.org/wik
 All of these commands will be typed at the [command-line interface](http://en.wikipedia.org/wiki/Command-line_interface).
 ## Install Prerequisites
 * Login to your server via [SSH](http://en.wikipedia.org/wiki/Secure_Shell), or if you are already logged into a [GUI](wikipedia:http://en.wikipedia.org/wiki/Graphical_user_interface) press Ctrl+Alt+T to open a terminal window.
-* Type the following command (this will install GCC, Make, MySQL, MySQL header files, MySQL Server, PCRE header files, and Zlib header files)
+* Type the following command (this will install G++, Make, MySQL, MySQL header files, MySQL Server, PCRE header files, and Zlib header files)
  
- `yum install gcc make mysql mysql-devel mysql-server pcre-devel zlib-devel git`
+ `yum install gcc-c++ make mysql mysql-devel mysql-server pcre-devel zlib-devel git`
 * (Optional) type the following command to install some additional packages: 
 
  `yum -y install dos2unix gdb nano screen unzip wget zip`
