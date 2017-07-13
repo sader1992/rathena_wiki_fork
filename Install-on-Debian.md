@@ -39,7 +39,7 @@ Required packages
   [`https://github.com/rathena/rathena.git`]: https://github.com/rathena/rathena.git
   [this section]: Transition_from_SVN_to_GIT#Notes_about_GIT "wikilink"
 
-`[root]# apt-get install git make gcc libmysqlclient-dev zlib1g-dev libpcre3-dev`
+`[root]# apt-get install git make g++ libmysqlclient-dev zlib1g-dev libpcre3-dev`
 
 ### Cloning The Repository
 
@@ -60,7 +60,7 @@ Please [this section][] if you're having issues with updating.
 ### Compile
 
 ` make server`
-` chmod a+x login-server && chmod a+x char-server && chmod a+x map-server`
+``` chmod a+x login-server && chmod a+x char-server && chmod a+x map-server```
 
 #### How to Recompile
 
