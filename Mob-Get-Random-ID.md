@@ -1,10 +1,4 @@
----
-title: Mob Get Random Id
-permalink: /Mob_Get_Random_Id/
----
-
-Get a random mob ID
--------------------
+# Get a random mob ID
 
 `int mob_get_random_id(int type, int flag, int lv)`
 
@@ -21,4 +15,3 @@ Get a random mob ID
     -   &8 = Mob must earn EXP
 -   lv = Mob Level to be checked
 
-[Category:Source_Functions](/Category:Source_Functions "wikilink")
