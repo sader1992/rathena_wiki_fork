@@ -4,4 +4,4 @@ This page will contain all functions on mob.c and mob.h
 
 [Mob Once Spawn](Mob-Once-Spawn)
 
-[Mob Get Random Id](Mob_Get_Random_Id)
+[Mob Get Random ID](Mob-Get-Random-ID)
