@@ -125,7 +125,7 @@ Note that global_reg_value tables are needed by both login-server and char-serve
 
  `./configure`
 
- `make sql`
+ `make server`
 
 *If you're using CentOS 32-bit please use:
 
