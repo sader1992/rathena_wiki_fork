@@ -1,9 +1,4 @@
----
-title: EAthena
-permalink: /EAthena/
----
-
-eAthena
+Intro
 =======
 
 **eAthena**, short for English Athena, is a cross-platform, open-source game server software for the popular MMORPG [Ragnarok Online](https://en.wikipedia.org/wiki/Ragnarok_Online). It is an emulation of the [Aegis](https://en.wikipedia.org/wiki/AEGIS_(Ragnarok_Online)) software created by Gravity Co., Ltd. that powers the official Ragnarok Online servers, and is used to run private servers. This is accomplished through modifying the game client provided by Gravity to connect to private, instead of official servers.
