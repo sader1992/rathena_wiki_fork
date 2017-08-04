@@ -10,9 +10,21 @@ This guide covers how to install rAthena on [CentOS](http://en.wikipedia.org/wik
 All of these commands will be typed at the [command-line interface](http://en.wikipedia.org/wiki/Command-line_interface).
 ## Install Prerequisites
 * Login to your server via [SSH](http://en.wikipedia.org/wiki/Secure_Shell), or if you are already logged into a [GUI](wikipedia:http://en.wikipedia.org/wiki/Graphical_user_interface) press Ctrl+Alt+T to open a terminal window.
-* Type the following command (this will install G++, Make, MySQL, MySQL header files, MySQL Server, PCRE header files, and Zlib header files)
+* GCC 4 is usable for rAthena but we highly suggest you use version 5. Enter the following code block into a new file in `/etc/yum.repos.d/fedora.repo`
+```
+[fedora23]
+name=fedora
+mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-23&arch=$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://getfedora.org/static/34EC9CBA.txt
+```
+* Type the following command (this will install G++ 5)
+
+`yum install gcc-c++ --enable-repo=fedora23`
+* Type the following command (this will install Make, MySQL, MySQL header files, MySQL Server, PCRE header files, and Zlib header files)
  
- `yum install gcc-c++ make mysql mysql-devel mysql-server pcre-devel zlib-devel git`
+ `yum install make mysql mysql-devel mysql-server pcre-devel zlib-devel git`
 * (Optional) type the following command to install some additional packages: 
 
  `yum -y install dos2unix gdb nano screen unzip wget zip`
