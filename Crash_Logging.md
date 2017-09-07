@@ -22,13 +22,6 @@ Collection methods
 
 There's lots of software that will let you do automatic, semi-automatic or manual crash information collection.
 
-### Manual
-
-//TODO: [GDB](/GDB "wikilink"), visual studio, windbg hooking, task manager right-click make dump
-
-### Automatic
-
-//TODO: automatic system response, rA plugins and scripts, gdb analysis, UserDump, DebugDiag, ProcDump
-Some info at [How to use Coredump/Stackdump](http://www.eathena.ws/board/index.php?showtopic=91817).
+You can either use Visual Studio or GDB ( see: [GDB](GDB#start-rathena-with-gdb) ) to run the server in debug mode and reproduce the crash. Or you just compile your server so it will generate a core dump (see: [GDB](GDB#generating-a-core-file) ).
 
 [Category:Debugging](/Category:Debugging "wikilink")
