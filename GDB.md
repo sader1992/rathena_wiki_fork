@@ -52,17 +52,42 @@ Should install it for use. If you're on a \*BSD based system, you may have to is
 Using gdb with rAthena
 ======================
 
+Start rathena with gdb
+----------------------
+When you can reproduce a crash, it's often useful to directly start rAthena from gdb.
+In this example we'll start the map-server in gdb:
+
+`gdb map-server`
+
+To actually run it, we type `r` in gdb:
+
+`gdb> r`
+
+The map server starts and we can reproduce the crash. After the crash we can just enter `bt full` to see the full stack during the crash.
+
+`gdb> bt full`
+
+
+Generating a core file
+----------------------
+First you need to set the size of core dumps to unlimited. For the current session you can type:
+
+`ulimit -c unlimited`
+
+Or to make this setting permanent edit `/etc/security/limits.conf` and uncomment `* soft core unlimited`.
+(Needs a reboot)
+
+Then you just need to reconfigure your rathena with the gdb option enabled:
+
+`./configure --enable-debug=gdb`
+
+And recompile rathena. The next time the server crashes, it should generate a core file.
+
+Viewing the core file
+---------------------
 Find out which program(map/char/login server) crashed and it's core file (should be named the same as the server file with an additional ".core" extension).. then on the console, type:
 
 `gdb xxx-server xxx-server_sql.core`
-
-You should get some limited output of the problem, or if the servers do not have a trace, you will get the following error:
-
-`No stack.`
-
-In case, there is no core file generated, you may need to enable core file generation before starting your servers with the following command:
-
-`ulimit -c unlimited`
 
 If a valid dump was found, you should get a prompt
 
@@ -79,5 +104,6 @@ See Also
 
 -   [Original guide to Core/Stack dumps](http://www.eathena.ws/board/index.php?showtopic=91817) by ViciousPucca
 -   [Download page for GDB](http://www.gnu.org/software/gdb/download/)
+-   [GDB Errors](https://stackoverflow.com/questions/7732983/core-dump-file-is-not-generated)
 
 [Category:Debugging](/Category:Debugging "wikilink")
