@@ -28,24 +28,43 @@ To everyone who is running their Linux with a GUI (Graphical User Interface) I w
 Required packages
 -----------------
 
-  [git]: http://packages.debian.org/stable/git
-  [make]: http://packages.debian.org/stable/make
-  [gcc]: http://packages.debian.org/stable/gcc
-  [libmysqlclient-dev]: http://packages.debian.org/stable/libmysqlclient-dev
-  [zlib1g-dev]: http://packages.debian.org/stable/zlib1g-dev
-  [libpcre3-dev]: http://packages.debian.org/stable/libpcre3-dev
-  [PCRE]: PCRE "wikilink"
-  [libssl-dev]: http://packages.debian.org/stable/libssl-dev
-  [`https://github.com/rathena/rathena.git`]: https://github.com/rathena/rathena.git
-  [this section]: Transition_from_SVN_to_GIT#Notes_about_GIT "wikilink"
+  git: http://packages.debian.org/stable/git
 
-`[root]# apt-get install git make g++ libmysqlclient-dev zlib1g-dev libpcre3-dev`
+  make: http://packages.debian.org/stable/make
+
+  gcc-5: http://packages.debian.org/sid/gcc-5
+
+  g++-5: https://packages.debian.org/sid/g++-5
+
+  libmysqlclient-dev: http://packages.debian.org/stable/libmysqlclient-dev
+
+  zlib1g-dev: http://packages.debian.org/stable/zlib1g-dev
+
+  libpcre3-dev: http://packages.debian.org/stable/libpcre3-dev
+
+  PCRE: https://github.com/rathena/rathena/wiki/PCRE
+
+  libssl-dev: http://packages.debian.org/stable/libssl-dev
+
+  rathena: https://github.com/rathena/rathena.git
+
+
+```
+apt-get install git make libmysqlclient-dev zlib1g-dev libpcre3-dev
+echo "deb http://ftp.us.debian.org/debian unstable main contrib non-free" >> /etc/apt/sources.list.d/unstable.list
+apt-get update
+apt-get install -t unstable gcc-5
+apt-get install -t unstable g++-5
+ln -s /usr/bin/gcc-5 /usr/bin/gcc
+ln -s /usr/bin/g++-5 /usr/bin/g++
+```
+
 
 ### Cloning The Repository
 
-You can obtain the latest version of rAthena by typing the following command. This will place rAthena in a folder called rAthena, but you are free to change it to whatever you like:
+You can obtain the latest version of rAthena by typing the following command. This will place rAthena in a folder called rAthena in your home directory, but you are free to change it to whatever you like:
 
-`git clone `[`https://github.com/rathena/rathena.git`][]` ~/rAthena`
+`git clone https://github.com/rathena/rathena.git ~/rAthena`
 
 #### Updating Existing Code
 
@@ -53,14 +72,14 @@ To pull the latest updates for rAthena you can do the following:
 
 `git pull`
 
-Please [this section][] if you're having issues with updating.
-
 ### Run configure script
 
 ### Compile
 
-` make server`
-``` chmod a+x login-server && chmod a+x char-server && chmod a+x map-server```
+```
+make server
+chmod a+x login-server && chmod a+x char-server && chmod a+x map-server
+```
 
 #### How to Recompile
 
