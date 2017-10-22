@@ -221,7 +221,7 @@ That's it! You're finished!
 ## External Links
 
 ### Sprite lists
-* <http://nn.nachtwolke.com/dev/npclist/>
+* <http://nn.ai4rei.net/dev/npclist/>
 
 ### Color Charts
 * <http://www.immigration-usa.com/html_colors.html>
