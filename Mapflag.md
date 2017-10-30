@@ -1,7 +1,4 @@
----
-title: Mapflag
-permalink: /Mapflag/
----
+# Mapflag
 
 A Map Flag describes restrictions, properties, and behaviors of a certain map. The map flags alter the behavior of the map regarding teleporting, storing location when disconnected, dead branch usage, penalties upon death, PVP behaviour, WoE behavior, ability to use skills or open up trade deals, current weather effects, and whether day/night will be in effect on this map.
 
@@ -11,12 +8,9 @@ Do note that Map Flags are not restricted to the folder, for it can also be defi
 
 Syntax and Setting
 ------------------
-
-<code>
-
+```
     <map name>%TAB%mapflag%TAB%<flag>%TAB%<extra>
-
-</code>
+```
 
 **Map Name**: Replace it with the name of the map you wish to apply the map flag to. You do not have to include .gat at the end of the map name.
 **mapflag**: Describes that it is a map flag.
@@ -28,9 +22,9 @@ Map Flags in Scripts
 
 Map Flags are utilized by the following script commands. Please visit individual articles for descriptions.
 
--   [setmapflag](/setmapflag "wikilink")
--   [removemapflag](/removemapflag "wikilink")
--   [setmapflagnosave](/setmapflagnosave "wikilink")
+-   [setmapflag](setmapflag)
+-   [removemapflag](removemapflag)
+-   [setmapflagnosave](setmapflagnosave)
 
 Flags
 -----
@@ -85,7 +79,7 @@ Below is a list of all the flags and their descriptions.
 ### gvg_castle
 
 -   Defines a guild castle
--   On guild castle maps, GVG is only on when [WoE](/WoE "wikilink") is active
+-   On guild castle maps, GVG is only on when [WoE](WoE) is active
 
 ### gvg_dungeon
 
@@ -128,7 +122,7 @@ Below is a list of all the flags and their descriptions.
 
 ### loadevent
 
--   When a player loads on this map, [OnPCLoadMapEvent](/OnPCLoadMapEvent "wikilink") will be triggered
+-   When a player loads on this map, [OnPCLoadMapEvent](OnPCLoadMapEvent) will be triggered
 
 ### monster_noteleport
 
@@ -136,7 +130,7 @@ Below is a list of all the flags and their descriptions.
 
 ### nightenabled
 
--   Enables specified map to display [night mode](/night_mode "wikilink") effects; most outdoor maps have this mapflag set for obvious reasons.
+-   Enables specified map to display [night mode](night_mode) effects; most outdoor maps have this mapflag set for obvious reasons.
 
 ### nobaseexp
 
@@ -150,8 +144,8 @@ Below is a list of all the flags and their descriptions.
     -   Bloody Branch (ID 12103)
     -   Poring Box (ID 12109)
 
-*Note: list of these items is [hardcoded](/wikipedia:Hard_coding "wikilink").*
-*See also: [mob_warp](/mob_warp "wikilink").*
+*Note: list of these items is hardcoded.*
+*See also: [mob_warp](mob_warp).*
 
 ### nochat
 
@@ -178,7 +172,7 @@ Below is a list of all the flags and their descriptions.
 -   Pets' intimacy will not drop after owner's death
 -   PR_REDEMPTIO skill will not deduct experience when used
 
-*See also: [death_penalty_type](/death_penalty_type "wikilink")*
+*See also: [death_penalty_type](death_penalty_type)*
 
 ### nogo
 
@@ -222,14 +216,14 @@ Below is a list of all the flags and their descriptions.
 
 ### noreturn
 
--   Usage [warpparty](/warpparty "wikilink") and [warpguild](/warpguild "wikilink") script commands is restricted
+-   Usage [warpparty](warpparty) and [warpguild](warpguild) script commands is restricted
 -   Following items can't be used:
     -   Butterfly Wing (ID 602)
     -   Dungeon Teleport Scrolls (ID 14527, 14581)
     -   Yellow, Green, Red and Blue Butterfly Wings (ID 14582–14585)
     -   Siege Teleport Scroll (ID 14591)
 
-*Note: list of these items is [hardcoded](/wikipedia:Hard_coding "wikilink").*
+*Note: list of these items is hardcoded.*
 
 ### nosave
 
@@ -241,9 +235,9 @@ Below is a list of all the flags and their descriptions.
 
 ### noteleport
 
--   [warp](/warp "wikilink"), [areawarp](/areawarp "wikilink"), [warpchar](/warpchar "wikilink"), [warpparty](/warpparty "wikilink"), [warpguild](/warpguild "wikilink") and [warpwaitingpc](/warpwaitingpc "wikilink") script commands will not work with *"Random"* destination
--   [warpwaitingpc](/warpwaitingpc "wikilink") will not work with *"SavePoint"* destination
--   [unitwarp](/unitwarp "wikilink") script command will not work with players
+-   [warp](warp), [areawarp](areawarp), [warpchar](warpchar), [warpparty](warpparty), [warpguild](warpguild) and [warpwaitingpc](warpwaitingpc) script commands will not work with *"Random"* destination
+-   [warpwaitingpc](warpwaitingpc) will not work with *"SavePoint"* destination
+-   [unitwarp](unitwarp) script command will not work with players
 -   @jump will not work if GM level is below any_warp_GM_min_level
 -   AL_TELEPORT skill can't be used by players (except for level 3, ie. Butterfly Wing)
 -   TK_HIGHJUMP skill will not work (except for **battleground**, **gvg** and **gvg_castle** maps)
@@ -252,7 +246,7 @@ Below is a list of all the flags and their descriptions.
     -   Fly Wing (ID 601)
     -   Giant Fly Wing (ID 12212)
 
-*Note: list of these items is [hardcoded](/wikipedia:Hard_coding "wikilink").*
+*Note: list of these items is hardcoded.*
 
 ### notrade
 
@@ -272,7 +266,7 @@ Below is a list of all the flags and their descriptions.
 
 ### nozenypenalty
 
--   Players will not receive [zeny penalty](/Zeny#Penalty "wikilink") upon their death
+-   Players will not receive [zeny penalty](Zeny#Penalty) upon their death
 
 ### partylock
 
@@ -293,8 +287,6 @@ Below is a list of all the flags and their descriptions.
 </code>
 
 -   For the *id* field, possible settings are the **item ID** you would like dropped, or **random** to pick a random item from the player.
-
-<!-- -->
 
 -   In the *type* field, the possibles are: **inventory** for dropping an item directly from inventory, **equip** for stripping the equipment off the character, or **all** for stripping the item off the character regardless of where it is. The percent, obviously, is a number times 100%.
 
@@ -334,7 +326,3 @@ The format for this file is:
     map_name<TAB>mapflag restricted<TAB>zone_number
 
 </code>
-
-The zone number is set in and
-
-[Category:Scripting](/Category:Scripting "wikilink")
