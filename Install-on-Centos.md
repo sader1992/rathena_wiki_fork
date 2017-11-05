@@ -105,17 +105,19 @@ You can obtain the latest version of rAthena by typing the following command. Th
 
 * Execute these commands (when prompted, enter your MySQL root password):
 
-`mysql -u root -p rathena4444_rag < main.sql`
+Main structure and logs (important!):
+```sh
+mysql -u root -p rathena4444_rag < main.sql
+mysql -u root -p rathena4444_log < logs.sql
+```
 
-`mysql -u root -p rathena4444_rag < item_db.sql`
-
-`mysql -u root -p rathena4444_rag < item_db2.sql`
-
-`mysql -u root -p rathena4444_rag < mob_db.sql`
-
-`mysql -u root -p rathena4444_rag < mob_db2.sql`
-
-`mysql -u root -p rathena4444_log < logs.sql`
+The following are only needed, if you want to use the item and mob sql database:
+```sh
+mysql -u root -p rathena4444_rag < item_db.sql
+mysql -u root -p rathena4444_rag < item_db2.sql
+mysql -u root -p rathena4444_rag < mob_db.sql
+mysql -u root -p rathena4444_rag < mob_db2.sql
+```
 
 NOTE: if you want to use different SQL DBs for login/char/map servers this is the list of databases each server use:
 * login-server: global_reg_value, ipbanlist, login, loginlog
