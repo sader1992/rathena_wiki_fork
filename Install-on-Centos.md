@@ -5,26 +5,22 @@ This guide covers how to install rAthena on [CentOS](http://en.wikipedia.org/wik
 * root access or access to an account that has [sudo privileges](http://en.wikipedia.org/wiki/Sudo)
 * an Internet connection to download install packages
 
-
 # Prerequisites
 All of these commands will be typed at the [command-line interface](http://en.wikipedia.org/wiki/Command-line_interface).
 ## Install Prerequisites
-* Login to your server via [SSH](http://en.wikipedia.org/wiki/Secure_Shell), or if you are already logged into a [GUI](wikipedia:http://en.wikipedia.org/wiki/Graphical_user_interface) press Ctrl+Alt+T to open a terminal window.
-* GCC 4 is usable for rAthena but we highly suggest you use version 5. Enter the following code block into a new file in `/etc/yum.repos.d/fedora.repo`
+* Login to your server via [SSH](http://en.wikipedia.org/wiki/Secure_Shell), or if you are already logged into a [GUI](wikipedia:http://en.wikipedia.org/wiki/Graphical_user_interface) open a terminal window.
+* Unfortunately CentOS' original GCC package is outdated. It's needed to use the gcc version from the devtoolset repository to get an more up-to-date compiler:
+```sh
+sudo yum install centos-release-scl
+sudo yum install devtoolset-7-gcc devtoolset-7-gcc-c++
 ```
-[fedora23]
-name=fedora
-mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-23&arch=$basearch
-enabled=1
-gpgcheck=1
-gpgkey=https://getfedora.org/static/34EC9CBA.txt
-```
-* Type the following command (this will install G++ 5)
-
-`yum install gcc-c++ --enable-repo=fedora23`
-* Type the following command (this will install Make, MySQL, MySQL header files, MySQL Server, PCRE header files, and Zlib header files)
+You're able to use the gcc-7 compiler now by enabling the devtoolset:
+`scl enable devtoolset-7 bash`
+If you don't want to use this command every time before compiling, you can add the following to your `~/.bashrc` or `~/.bash_profile`:
+`source scl_source enable devtoolset-7`
  
  `yum install make mysql mysql-devel mysql-server pcre-devel zlib-devel git`
+`sudo yum install mariadb mariadb-devel mariadb-server pcre-devel zlib-devel git`
 * (Optional) type the following command to install some additional packages: 
 
  `yum -y install dos2unix gdb nano screen unzip wget zip`
@@ -47,26 +43,22 @@ Type the following command to create a non-root Linux account:
 
 `passwd rathena4444`
 
-## Configure MySQL
+## Configure MySQL (MariaDB)
+Note: [MariaDB](https://en.wikipedia.org/wiki/MariaDB) is a community-developed fork of the MySQL database management system. Therefore in the following section MySQL is equivalent to MariaDB and vice versa.
 
 ### Set a root password
 The default MySQL Server install creates a MySQL user 'root'@'localhost' with NO password. It is recommended you create a password for the root user. 
 * Run MySQL Service:
 
-`service mysqld start`
+`systemctl start mariadb`
 * Run this command and follow the prompts: 
 
 `mysql_secure_installation`
 * Login to your MySQL Server as root: 
 * When prompted, enter your root MySQL password.
 
-`mysql --user=root -p`
+`mysql -u root -p`
 * Now your prompt should look like this (the MySQL command prompt): 
-
-`mysql>`
-* In case your mysql server isn't started, you may have to start it with:
-
-`/etc/init.d/mysqld start`
 
 ### Create SQL database for rAthena
 * At the MySQL prompt, type this to [create a database](http://dev.mysql.com/doc/refman/5.5/en/create-database.html) (replace `rathena4444` with the Linux username you created earlier): 
@@ -109,19 +101,19 @@ You can obtain the latest version of rAthena by typing the following command. Th
 ## [Import](http://dev.mysql.com/doc/refman/5.5/en/batch-commands.html) MySQL Tables
 * Change directory to the '''sql-files''' folder.
 
-`cd rAthena/sql-files/`
+`cd ~/rAthena/sql-files/`
 
 * Execute these commands (when prompted, enter your MySQL root password):
 
-`mysql --user=root -p rathena4444_rag < main.sql`
+`mysql -u root -p rathena4444_rag < main.sql`
 
-`mysql --user=root -p rathena4444_rag < item_db.sql`
+`mysql -u root -p rathena4444_rag < item_db.sql`
 
-`mysql --user=root -p rathena4444_rag < item_db2.sql`
+`mysql -u root -p rathena4444_rag < item_db2.sql`
 
-`mysql --user=root -p rathena4444_rag < mob_db.sql`
+`mysql -u root -p rathena4444_rag < mob_db.sql`
 
-`mysql --user=root -p rathena4444_rag < mob_db2.sql`
+`mysql -u root -p rathena4444_rag < mob_db2.sql`
 
 `mysql -u root -p rathena4444_log < logs.sql`
 
@@ -132,27 +124,24 @@ NOTE: if you want to use different SQL DBs for login/char/map servers this is th
 Note that global_reg_value tables are needed by both login-server and char-server (though it may be different tables)
 
 ## Compile Source Code
-
-` cd trunk`
-
- `./configure`
-
- `make server`
+```sh
+cd ~/rAthena
+./configure
+make clean server
+```
 
 *If you're using CentOS 32-bit please use:
 
-` ./configure --disable-64bit`
+`./configure --disable-64bit`
 
 ### How to Recompile
-In the future (after you update or edit any file in /src) to recompile, add ''make clean'' before make sql: 
-
-`cd trunk`
-
-`./configure`
-
-`make clean`
-
-`make server`
+In the future (after you update or edit any file in /src) to recompile: 
+```sh
+cd ~/rAthena
+./configure # only needed when you change Makefiles
+make clean # if you want to clean your current compilation
+make server # rebuilds the whole server
+```
 
 # Start your rAthena Server
 * Change access mode of athena-start file so that you can execute it.
