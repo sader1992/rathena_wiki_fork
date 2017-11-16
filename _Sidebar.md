@@ -9,7 +9,9 @@
 * [Scripting](scripting) like a pro!
 * Server [Modifications](Server-Modification) and what to expect
 * [Database Configuration](Database-Configuration)
-* [Customize](customizing) your server!
+
+## Customization
+* Adding [Custom Items](Custom-Items)
 
 ## Setup the Client
 * [Data folder](Data-Folder)
