@@ -19,7 +19,6 @@ You're able to use the gcc-7 compiler now by enabling the devtoolset:
 If you don't want to use this command every time before compiling, you can add the following to your `~/.bashrc` or `~/.bash_profile`:
 `source scl_source enable devtoolset-7`
  
- `yum install make mysql mysql-devel mysql-server pcre-devel zlib-devel git`
 `sudo yum install mariadb mariadb-devel mariadb-server pcre-devel zlib-devel git`
 * (Optional) type the following command to install some additional packages: 
 
