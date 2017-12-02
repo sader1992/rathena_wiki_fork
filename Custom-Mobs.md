@@ -12,4 +12,4 @@ The safest way found to achieve perfect use of the SFX by the client is converti
 ### Converting on Audacity
 * Open or Import desired audio file (such as OGG).
 * Select 'Export As' on 'File' menu and save it as WAV.
-* Right-click exported file, check the 'Details' tab bit rate, if it's not above 352 kbps it should work.
+* Right-click the exported file, check the 'Details' tab bit rate, if it's not above 352 kbps it should work.
