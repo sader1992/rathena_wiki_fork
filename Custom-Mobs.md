@@ -19,5 +19,5 @@ For uncompressed formats, such as WAV, the bit-rate (number of binary digits per
 ### Converting on FormatFactory
 * Import or drag the desired audio file to the window.
 * Select 'Audio' then 'WAV' and, before clicking 'Ok', hit 'Settings'.
-* Change 'Sample Rate' to 11025 and set 'Audio Channel' to 2, hit 'Ok' and click 'Start'.
+* Change 'Sample Rate' to 22050 and set 'Audio Channel' to 1, hit 'Ok' and click 'Start'.
 * Right-click the exported file, check the 'Details' tab bit rate, if it's not above 352 kbps it should work.
