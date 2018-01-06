@@ -7,7 +7,7 @@ If your monster holds any special sound effects, not original from the default l
 * Generated, rercorded or converted to WAV.
 * Be set in a bit rate no superior than 352kbps.
 
-The safest way found to achieve perfect use of the SFX by the client is converting any file using [Audacity](http://www.audacityteam.org/download/) or similar audio editors. Converting the file on popular all-media converters, such as [Format Factory](https://formatfactory.en.uptodown.com/windows) at default settings will result in a high bit rate, and although it can be played normally by other software, the client is uncompatible with it.
+The safest way found to achieve perfect use of the SFX by the client is converting any file using [Audacity](http://www.audacityteam.org/download/) or similar audio editors. Converting the file on popular all-media converters, such as [FormatFactory](https://formatfactory.en.uptodown.com/windows) at default settings will result in a high bit rate, and although it can be played normally by other software, the client is uncompatible with it.
 
 For uncompressed formats, such as WAV, the bit-rate (number of binary digits per second) can be calculated from the "sample rate", "sample format" and "number of audio channels".
 
