@@ -12,7 +12,7 @@
 
 ## Customization
 * Adding [Custom Items](Custom_Items)
-* Adding [Custom Monsters](Custom_Mobs)
+* Adding [Custom Monsters](Custom-Mobs)
 
 ## Setup the Client
 * [Data folder](Data-Folder)
