@@ -11,8 +11,8 @@
 * [Database Configuration](Database-Configuration)
 
 ## Customization
-* Adding [Custom Items](Custom-Items)
-* Adding [Custom Monsters](Custom-Mobs)
+* Adding [Custom Items](Custom_Items)
+* Adding [Custom Monsters](Custom_Mobs)
 
 ## Setup the Client
 * [Data folder](Data-Folder)
