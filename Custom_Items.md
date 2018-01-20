@@ -535,8 +535,9 @@ Sometimes what sprite authors do is they simply copy the original sprite itself 
 
 View IDs, Having A Custom Headgear Without Xray
 ===============================================
-
-Look in your data folder and make sure there is a folder named "lua files", if there is not make it.[Download the most recent lub package](http://svn6.assembla.com/svn/ClientSide/Lua_Project/lubs/) and extract it to your lua files folder in your data folder. [Download the most recent accname.lua and accessoryid.lua](http://svn6.assembla.com/svn/ClientSide/Lua_Project/lua%20files/datainfo/), put it in your datainfo folder that is inside the lua files folder. Now download [this lub compiling tool](http://svn6.assembla.com/svn/ClientSide/Lua_Project/tool/luac5.0.2.exe), and put it in the datainfo folder. Now, Open accessoryid.lua in the datainfo folder with notepad or a text editor of your choice, go all the way down until the names stop. Add your custom gears before the } symbol. You should use a high number just like with your custom item's database ID, or use unused IDs to be sure you won't have to redo them all in the future, or at least for a while. Example:
+First, make sure your data folder/GRF file contains a folder named "lua files" or "luafiles514" depending on your client's version. If not, check out [Zackdreaver's translation project](https://github.com/zackdreaver/ROenglishRE).  
+Also, download the [Lua compiler](http://lua-users.org/wiki/LuaBinaries).  
+Now, Open accessoryid.lua in the datainfo folder with notepad or a text editor of your choice, go all the way down until the names stop. Add your custom gears before the } symbol. You should use a high number just like with your custom item's database ID, or use unused IDs to be sure you won't have to redo them all in the future, or at least for a while. Example:
 
 `   ACCESSORY_PINKBUNNY_HAIRBAND = 663,`
 `   ACCESSORY_GREENBUNNY_HAIRBAND = 664,`
