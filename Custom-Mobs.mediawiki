@@ -1,0 +1,214 @@
+This guide covers the process of adding Custom Monsters to your Server and Client and also, all related elements to make the new entry as close as possible of the official content.
+
+= Server-Side =
+== db/(pre-)re/mob_db.txt ==
+This is where you're going to add custom mobs for servers with SQL mob databases disabled.
+
+{| class="wikitable"
+! style="text-align: center;" | Fields
+! style="text-align: center;" | Description
+|-
+| '''''ID'''''
+| The ID of the monster.
+|-
+| '''''Sprite_Name'''''
+| The sprite name of the monster minus .act & .spr.
+|-
+| '''''kROName'''''
+| The name of the monster, this will be used when you use "--ja--".
+|-
+| '''''iROName'''''
+| The name of the monster, this will be used when you use "--en--".
+|-
+| '''''LV'''''
+| The monsters level.
+|-
+| '''''HP'''''
+| Max and current health points of the monster.
+|-
+| '''''SP'''''
+| The monsters SP.
+|-
+| '''''EXP'''''
+| Base experience given by the monster.
+|-
+| '''''JEXP'''''
+| Job experience given by the monster.
+|-
+| '''''Range1'''''
+| Number of cells the monster can physically attack from. Values greater than 2 count as ranged attacks.
+|-
+| '''''ATK1'''''
+| ATK of the monster.
+|-
+| '''''ATK2'''''
+| MATK of the monster. If undefined, the value of ATK1 will be used as the absolute attack.
+|-
+| '''''DEF'''''
+| Physical defense of the monster, reduce melee & ranged physical attack/skill.
+|-
+| '''''MDEF'''''
+| Magic defense of the monster.
+|-
+| '''''STR'''''
+| Strength of the monster. Affects ATK.
+|-
+| '''''AGI'''''
+| Agility of the monster. Affects FLEE.
+|-
+| '''''VIT'''''
+| Vitality of the monster. Adds additional DEF.
+|-
+| '''''INT'''''
+| Intelligence of the monster. Adds additional MATK.
+|-
+| '''''DEX'''''
+| Dexterity of the monster. Affects HIT rate.
+|-
+| '''''LUK'''''
+| Luck of the monster. Affects Perfect dodge/Lucky flee/Perfect flee/Lucky dodge rate.
+|-
+| '''''Range2'''''
+| Maximum Skill Range.
+|-
+| '''''Range3'''''
+| Sight limit of the monster. If set to 1000 or beyond, the monster will follow you all over the map.
+|-
+| '''''Scale'''''
+| Size of the monster.
+----{| class="wikitable"
+|-
+| 0 || Small || SZ_SMALL
+|-
+| 1 || Medium || SZ_MEDIUM
+|-
+| 2 || Large || SZ_BIG
+|}
+|-
+| '''''Race'''''
+| Race of the monster.
+----{| class="wikitable"
+|-
+| 0 || formless || RC_Formless
+|-
+| 1 || undead || RC_Undead
+|-
+| 2 || animal || RC_Brute
+|-
+| 3 || plant || RC_Plant
+|-
+| 4 || insect || RC_Insect
+|-
+| 5 || fish || RC_Fish
+|-
+| 6 || demon || RC_Demon
+|-
+| 7 || demihuman || RC_DemiHuman
+|-
+| 8 || angel || RC_Angel
+|-
+| 9 || dragon || RC_Dragon
+|}
+|-
+| '''''Element'''''
+| This is a two digit code representing level and element respectively.
+----{| class="wikitable"
+|+ style="caption-side:bottom; color:#ff545d;"|''For example 83 is Lv4 Fire Elemental.''
+! scope="row" colspan="2"| Element Level
+! scope="row" colspan="2"| Element Types
+|-
+| 2 || Lv1
+| 0 || Ele_Neutral
+|-
+| 4 || Lv2
+| 1 || Ele_Water
+|-
+| 6 || Lv3
+| 2 || Ele_Earth
+|-
+| 8 || Lv4
+| 3 || Ele_Fire
+|-
+|
+|
+| 4 || Ele_Wind
+|-
+|
+|
+| 5 || Ele_Poison
+|-
+|
+|
+| 6 || Ele_Holy
+|-
+|
+|
+| 7 || Ele_Dark
+|-
+|
+|
+| 8 || Ele_Ghost
+|-
+|
+|
+| 9 || Ele_Undead
+|}
+|-
+| '''''Mode'''''
+| Behaviour of the monster. Full explanation can be found on 'doc/mob_db_mode_list.txt'
+|-
+| '''''Speed'''''
+| Walk speed of the monster. 1 = Fastest, 100 = Normal, 1000 = Slowest.
+|-
+| '''''aDelay'''''
+| Attack Delay of the monster, also known as ASPD. Low value means faster,attack speed, but don't make it too low or it will lag when a player got,mobbed by several of these mobs.
+|-
+| '''''aMotion'''''
+| Attack animation motion. Lower values mean mob attacks will be, displayed at higher fps making it quicker.
+|-
+| '''''dMotion'''''
+| Stun animation similar to aMotion but used to display the "I am,hit" animation. Coincidentally, this same value is used to determine how, long it is before the monster/player can move again. Endure is dMotion = 0.
+|-
+| '''''MEXP'''''
+| Experience awarded to the player who killed the MVP. (This exp is a percentage of the exp the,monster gives.)
+|-
+| '''''MVP(1-3)id'''''
+| The Item ID of the MVP drop goes here. Maximum of 3 items.
+|-
+| '''''MVP(1-3)per'''''
+| The rate of the MVP item being dropped, n/10000.
+|-
+| '''''Drop(1-9)id'''''
+| The Item ID of the drop goes here. Maximum of 9 items.
+|-
+| '''''Drop(1-9)per'''''
+| The rate of the item being dropped, n/10000.
+|-
+| '''''DropCardid'''''
+| The Item ID of the monster's card (if any).
+|-
+| '''''DropCardper'''''
+| The rate of the card being dropped, n/10000.
+|}
+
+= Client-Side =
+
+=== Sound Effects (SFX) ===
+If your monster holds any special sound effects, not original from the default library, note that to be played properly by the client it must: 
+* Generated, recorded or converted to WAV.
+* Be set in a bit rate no superior than 352kbps.
+
+The safest way found to achieve perfect use of the SFX by the client is converting any file using [Audacity](http://www.audacityteam.org/download/) or similar audio editors. Converting the file on popular all-media converters, such as [FormatFactory](https://formatfactory.en.uptodown.com/windows) at default settings will result in a high bit rate, and although it can be played normally by other software, the client is incompatible with it.
+
+For uncompressed formats, such as WAV, the bit-rate (number of binary digits per second) can be calculated from the "sample rate", "sample format" and "number of audio channels".
+
+=== Converting on Audacity ===
+* Open or Import desired audio file (such as OGG).
+* Select 'Export As' on 'File' menu and save it as WAV.
+* Right-click the exported file, check the 'Details' tab bit rate, if it's not above 352 kbps it should work.
+
+=== Converting on FormatFactory ===
+* Import or drag the desired audio file to the window.
+* Select 'Audio' then 'WAV' and, before clicking 'Ok', hit 'Settings'.
+* Change 'Sample Rate' to 22050 and set 'Audio Channel' to 1, hit 'Ok' and click 'Start'.
+* Right-click the exported file, check the 'Details' tab bit rate, if it's not above 352 kbps it should work.
