@@ -13,7 +13,7 @@ All Item Groups are being read from or and . Available Item Group IDs can be fou
 Structure
 ---------
 
-`GroupID,ItemID,Rate{,Amount,Random,isAnnounced,Duration,isNamed,isBound}`
+`GroupID,ItemID,Rate{,Amount,Random,isAnnounced,Duration,GUID,isBound,isNamed}`
 
 -   **GroupID**: ID or name of the group if defined at const.txt
 -   **ItemID**: Available item_id that will be obtained from this item group. Supports AegisName of the item.
@@ -22,8 +22,9 @@ Structure
 -   **Random**: The item group's sub group. If set to '0', the item will always be obtained. If *Rate* is also specified and *Random* is set to '0', the item will always be obtained and there is a chance to get the item again.
 -   **isAnnounced**: If set to 1, it will be broadcasted to the server that the item has been obtained by the player.
 -   **Duration**: Makes the item a rental item, and the given value determines the expiration time in minutes. Only use for non-stackable items (e.g., weapons, armors).
--   **isNamed**: Inscribes the item with the obtainer's name.
+-   **GUID**: If 1, the items will be created as their own stack. They will be unable to stack with other existing similar items.
 -   **isBound**: Binds the obtained item. See [getitembound](/getitembound "wikilink") for valid bound types.
+-   **isNamed**: Inscribes the item with the obtainer's name.
 
 Custom Item Group
 -----------------
