@@ -13,6 +13,7 @@
 ## Customization
 * Adding [Custom Items](Custom_Items)
 * Adding [Custom Monsters](Custom-Mobs)
+* [GRF Encryption](GRF-Encryption)
 
 ## Setup the Client
 * [Data folder](Data-Folder)
