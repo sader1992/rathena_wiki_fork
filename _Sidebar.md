@@ -11,7 +11,7 @@
 * [Database Configuration](Database-Configuration)
 
 ## Customization
-* Adding [Custom Items](Custom Items)
+* Adding [Custom Items](Custom-Items)
 * Adding [Custom Monsters](Custom-Mobs)
 * [GRF Encryption](GRF-Encryption)
 
