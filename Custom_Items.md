@@ -1,8 +1,3 @@
----
-title: Custom Items
-permalink: /Custom_Items/
----
-
 Structure
 =========
 
