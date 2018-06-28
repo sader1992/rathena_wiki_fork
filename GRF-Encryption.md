@@ -33,7 +33,7 @@ Files can now be encrypted.
 Open your GRF, GPF or THOR, select the files you want to protect.
 Right-click it and select **EncryptIon** > **Encrypt**.
 
-Enter the **Password **you previously defined, confirm and the file will be highlighted in Orange.
+Enter the **Password** you previously defined, confirm and the file will be highlighted in Orange.
 
 ![](https://i.imgur.com/MUg1W6H.png)
 
