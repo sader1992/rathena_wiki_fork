@@ -1,10 +1,10 @@
 # Prerequisites
 All of the following must be installed on your system before you proceed.
 * Windows XP SP3 or later
-* [Visual Studio Express 2017](https://www.visualstudio.com/vs/visual-studio-express/)
+* [Visual Studio Express 2017](https://visualstudio.microsoft.com/vs/express/)
   * For users with limited bandwidth, [follow this guide](https://rathena.org/board/topic/111269-guide-lightweight-compiler-for-windows-for-replacement-heavy-visual-studio-ide-compile-rathena-faster-save-your-bandwidth-and-disk-space/) by @annacondaqq
-* [MSysGit](http://msysgit.github.io/)
-* [TortoiseGit](http://code.google.com/p/tortoisegit/)
+* [Git for Windows](https://gitforwindows.org/)
+* [TortoiseGit](https://tortoisegit.org/download/)
 * [MySQL Server](http://www.mysql.com/downloads/mysql/)
 * [MySQL Workbench](http://www.mysql.com/downloads/workbench/)
 
